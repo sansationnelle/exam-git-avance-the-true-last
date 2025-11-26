@@ -1,12 +1,13 @@
-package server
+package handlers
 
 import (
 	"html/template"
 	"net/http"
 	"strconv"
+    "main/data"
 )
 
-var books = []Book{
+var books = []data.Book{
     {1, "The Go Programming Language", "Alan Donovan", 2015},
     {2, "Clean Code", "Robert C. Martin", 2008},
     {3, "The Pragmatic Programmer", "Andrew Hunt", 1999},
@@ -26,7 +27,7 @@ func BookHandler(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    var selected *Book
+    var selected *data.Book
     for _, b := range books {
         if b.ID == id {
             selected = &b

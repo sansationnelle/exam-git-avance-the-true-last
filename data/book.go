@@ -1,4 +1,4 @@
-package server
+package data
 
 type Book struct {
     ID     int
