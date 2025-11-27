@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accueil - Campus Library</title>
+</head>
+<body>
+    <h1>Liste des livres</h1>
+    
+    {{range .}}
+        <div>
+            <strong>{{.Title}}</strong><br>
+            Auteur : {{.Author}}<br>
+            Année : {{.Year}}<br>
+            <a href="/book?id={{.ID}}">Voir le livre</a>
+        </div>
+        <hr>
+    {{end}}
+</body>
+</html>
